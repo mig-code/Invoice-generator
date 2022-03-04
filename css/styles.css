@@ -1,0 +1,25 @@
+body{
+    background-color: blue;;
+}
+
+.container {
+    width: 550px;
+    margin-inline: auto;
+  }
+
+header{
+    background-color: #3a69d2;
+    color:whitesmoke;
+    text-align: center;
+    padding: 60px 0;
+  }
+
+.maincontent{
+  background-color:#1f2937;
+}
+
+.input-btn-section{
+    color:whitesmoke;
+    text-align: center;
+
+}
