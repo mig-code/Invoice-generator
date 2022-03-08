@@ -1,10 +1,16 @@
 body{
-    background-color: blue;;
+    background-color: blue;
+    margin-left:auto;
+    margin-right:auto;
+    width: 600px;
+    margin-top:0;
+    font-size: 16px;
+    color:white
 }
 
 .container {
-    width: 550px;
-    margin-inline: auto;
+ 
+    
   }
 
 header{
@@ -16,10 +22,47 @@ header{
 
 .maincontent{
   background-color:#1f2937;
+  
+}
+.input-btn-section{
+  color:whitesmoke;
+  text-align: center;
+  padding-top:10px;
+
+}
+.renderSelected-items{
+  margin-right:50px;
+  font-size: 20px;
+  text-align: right;
 }
 
-.input-btn-section{
-    color:whitesmoke;
-    text-align: center;
+.priceBox{
+  text-align: right;
+  margin:50px;
+  font-size: 26px;
+}
 
+
+
+.sendInvoice{
+  text-align: center;
+  margin-bottom: 20px;
+  padding:20px 0;
+}
+
+.text-align-right{
+  padding-left: 200px;
+  
+}
+
+
+
+button{
+  padding: 20px 40px;
+  background-color: #afb2d4;
+  font-weight: bold;
+  border-radius: 3px;
+}
+button:hover{
+  background-color: white;
 }
