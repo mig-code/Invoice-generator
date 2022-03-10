@@ -4,7 +4,7 @@
 const washBtn=document.getElementById("washCar")
 const mowBtn=document.getElementById("mowLawn")
 const pullBtn=document.getElementById("pullWeeds")
-const sendBtn=document.getElementById("sendInvoiceButton")
+const sendBtn=document.getElementById("send-invoice-btn")
 
 const renderItemsEl = document.getElementById("renderItems")
 
@@ -14,11 +14,9 @@ totalPriceEl.innerHTML=totalAmount + " $"
 
 
 
-
-
 //SERVICES VARIABLES
 let washService =["Wash Car", 10]
-let mowService=["Mow Lawn ",20]
+let mowService=["Mow Lawn",20]
 let pullService=["Pull Weed",30]
 
 //Var for check if a service is already selected
@@ -73,16 +71,35 @@ sendBtn.addEventListener("click",function(){
         notSelecteMow=true
         notSelectedPull=true
     
-        renderItemsEl.innerHTML="The invoice has been sent"
+        renderItemsEl.innerHTML=`<div class="invoice-sent-render"> The invoice has been sent.</div>`
     }
 })
 //FUNCTION TO RENDER SERVICES 
+function removeItem(item){
+    //check arary for make item available again
+    if(arrayOfServices[item][1]===10){
+       
+        notSelectedWash=true
+    }if(arrayOfServices[item][1]===20){
+
+        notSelecteMow=true
+    }if(arrayOfServices[item][1]===30){
+        notSelectedPull=true
+    }
+    arrayOfServices.splice(item,1)
+    console.log(item)
+    renderServices()
+    renderPrice()
+    
+
+}
 
 function renderServices(){
     renderItemsEl.innerHTML=""
 
     for(i=0;i<arrayOfServices.length;i++){
-        renderItemsEl.innerHTML+= `<p>${arrayOfServices[i][0]}<span class="text-align-right"> ${arrayOfServices[i][1]} $</span><p>`
+        renderItemsEl.innerHTML+= `<p>${arrayOfServices[i][0]}<span class="text-align-right"> ${arrayOfServices[i][1]} $</span>
+                                    <button class=btn-remove value=${i}  onclick="removeItem(this.value)">Remove</button><p>`
     }
 }
 
@@ -96,6 +113,8 @@ function renderPrice(){
     }
     totalPriceEl.innerHTML=totalAmount+" $"
 }
+
+
 
 
 
